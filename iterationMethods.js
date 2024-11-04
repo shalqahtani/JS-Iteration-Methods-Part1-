@@ -35,14 +35,14 @@ Write code to perform the following tasks using the map method:
 3) Create a new array that contains each number squared.
 4) Create a new array that contains each number multiplied by 2.
 ******************************************************************/
-const Myarray = [1, 2, 3, 4];
-const squared = Myarray.map(function (num) {
+//const Myarray = [1, 2, 3, 4];
+const squared = numbers.map(function (num) {
   return num ** 2;
 });
 console.log(squared);
 
 //task2-part(4)
-const multipliedBytwo = Myarray.map(function (num) {
+const multipliedBytwo = numbers.map(function (num) {
   return num * 2;
 });
 console.log(multipliedBytwo);
@@ -55,8 +55,8 @@ Combine the filter and map methods to perform the following tasks:
 5) Filter the numbers that are greater than or equal to 20 and then square each of them.
 6) Filter the numbers that are divisible by 5 and then multiply each of them by 3.
 ******************************************************************/
-const newArray = [5, 10, 15, 20, 25, 30];
-const greaterOrEqual20 = newArray.filter(function (num) {
+//const newArray = [5, 10, 15, 20, 25, 30];
+const greaterOrEqual20 = numbers.filter(function (num) {
   if (num >= 20) {
     return true;
   } else {
@@ -70,16 +70,21 @@ const square = greaterOrEqual20.map(function (num) {
 console.log(square);
 
 //task3-(6)
-const divisiblebyfive = newArray.filter(function (item) {
-  if (item % 5 == 0) {
-    return true;
-  } else {
-    return false;
-  }
-});
-console.log(divisiblebyfive);
+const divisiblebyfiveAndmultipledbythree = numbers
+  .filter(function (item) {
+    if (item % 5 == 0) {
+      return true;
+    } else {
+      return false;
+    }
+  })
+  .map(function (item) {
+    return item * 3;
+  });
+console.log(divisiblebyfiveAndmultipledbythree);
+//console.log(multipliedByThree);
 
-const multipliedByThree = divisiblebyfive.map(function (item) {
+/*const multipliedByThree = divisiblebyfive.map(function (item) {
   return item * 3;
 });
-console.log(multipliedByThree);
+console.log(multipliedByThree);*/
